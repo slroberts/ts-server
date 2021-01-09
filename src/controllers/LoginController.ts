@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import { get, controller, bodyValidator, post } from './decorators';
 
 @controller('/auth')
@@ -35,5 +35,11 @@ class LoginController {
     } else {
       res.send('Invalid email or password');
     }
+  }
+
+  @get('/logout')
+  getLogout(req: Request, res: Response) {
+    req.session = undefined;
+    res.redirect('/');
   }
 }
