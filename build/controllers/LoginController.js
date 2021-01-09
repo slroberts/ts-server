@@ -18,6 +18,7 @@ var LoginController = /** @class */ (function () {
     };
     __decorate([
         decorators_1.get('/login'),
+        use(middleware),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object, Object]),
         __metadata("design:returntype", void 0)
